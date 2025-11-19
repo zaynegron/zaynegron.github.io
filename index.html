@@ -1,12 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isaiah Negron - Personal Webpage</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Isaiah Negron - Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #00c3ff;
+        }
+
+        section {
+            padding: 20px 40px;
+        }
+
+        img {
+            border-radius: 12px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        td, th {
+            border: 1px solid #444;
+            padding: 10px;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            width: 280px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1> Welcome to My Personal Webpage</h1>
-<p>This webpage is a work in progress, come back soon for updates.</p>
+
+<header>
+    <h1>My Portfolio</h1>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <!-- Your real photo -->
+    <img src="/Users/isaiahnegron/Pictures/Photos Library.photoslibrary/resources/derivatives/7/74355F9C-23CF-41BF-AD8F-949F05734B72_1_105_c.jpeg" alt="Isaiah" width="350">
+
+    <p>Hello! My name is Isaiah Negron. I’m 19 years old and from Philadelphia. I am currently a sophomore at Lincoln University and a member of the baseball team. Thank you for visiting my personal website!</p>
+
+    <h3> Gifs </h3>
+    <img src="https://media.tenor.com/Io_KifV00_AAAAAM/bryce-harper.gif" alt="Bryce Harper Gif">
+    <section> 
+        <img src="https://media.tenor.com/ONaeC7Tnuz8AAAAM/pete-alonso-mets.gif" alt="Pete Alonso Gif">
+    </section>
+    <section>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2wwYmY4ZG1mZWVqaXN4cGh0bHhzeGl0a2Zxczd5NG91bDNnZHZoZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IUofLgsoQlbwQENSgd/giphy.webp" alt="MLB Gif">
+    </section>
+
+    <h3>My Hobbies</h3>
+    <ul>
+        <li>I enjoy meeting new people.</li>
+        <li>I love sleeping and playing video games.</li>
+        <li>I like to travel too.</li>
+    </ul>
+
+<section> 
+<h2><p><strong>Lincoln Baseball:</strong></h2>  
+<em><a href="https://lulions.com/sports/baseball/schedule" target="_blank" rel="noopener noreferrer">Click here to view the Lincoln University baseball team.</a></em>
+    </p>
+</section>
+</h2>
+</section>
+
+<section id="buttons">
+    <h2>Buttons</h2>
+
+    <div class="projects">
+    <div class="project-card">
+        <h3>Button 1: Refresh the Page</h3>
+        <p>Pressing the button below will simply reload the page. Try it out!</p>
+
+        <!-- Refresh Button -->
+        <button onclick="location.reload()">Click me to refresh the page.</button>
+    </div>
+</div>
+
+
+        <div class="project-card">
+            <h3>Button 2: Random MLB Fact</h3>
+            <button id="mlbFactBtn">Click me for a random MLB fact!</button>
+            <p id="mlbFactText" style="margin-top: 15px; font-style: italic;"></p>
+        </div>
+    </div>
+
+
+    <div class="projects">
+    <div class="project-card">
+    <h2>Button 3: Guess the Player!</h2>
+
+    <div id="gameContainer" style="max-width:400px; text-align:center;">
+        <img id="playerImage" 
+             src="players/default.jpg" 
+             alt="MLB Player" 
+             style="width:100%; border-radius:12px; margin-bottom:15px;">
+
+        <p><strong>Who is this player?</strong></p>
+
+        <input type="text" id="guessInput" placeholder="Type player name..."
+               style="padding:8px; width:90%; border-radius:6px; border:1px solid #333;">
+
+        <button id="guessBtn" 
+                style="margin-top:10px; padding:10px 18px; border-radius:6px; cursor:pointer;">
+            Submit Guess
+        </button>
+
+        <p id="feedback" style="margin-top:15px; font-size:18px;"></p>
+
+        <p id="score" style="margin-top:10px; font-weight:bold;">Score: 0</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <table>
+        <tr>
+            <th colspan="2">Contact Info</th>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>484-429-3930</td>
+        </tr>
+        <tr>
+            <td>Instagram</td>
+            <td><a href="https://www.instagram.com/isaiahnegron/" target="_blank" rel="noopener noreferrer">Open Profile</a></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>isaiah.negron@lions.lincoln.edu | zaynegron9@gmail.com</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    <p>© 2025 Isaiah Negron • Lincoln University</p>
+</footer>
+
+<script>
+    const mlbFacts = [
+        "The New York Yankees have won the most World Series titles with 27 championships.",
+        "The fastest recorded pitch in MLB history is 105.8 mph by Aroldis Chapman.",
+        "Jackie Robinson broke the MLB color barrier in 1947 with the Brooklyn Dodgers.",
+        "Nolan Ryan has the most career strikeouts in MLB history with 5,714.",
+        "Ichiro Suzuki holds the single-season hits record with 262 hits in 2004.",
+        "Barry Bonds holds the MLB home run record with 762 career homers.",
+        "Cal Ripken Jr. played 2,632 consecutive games, earning the nickname 'The Iron Man'.",
+        "The first MLB World Series was played in 1903 between the Pirates and the Red Sox.",
+        "Willie Mays is the only center fielder with 12 Gold Gloves and over 600 home runs.",
+        "Rickey Henderson holds the MLB record for stolen bases with 1,406."
+    ];
+
+    document.getElementById("mlbFactBtn").addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * mlbFacts.length);
+        document.getElementById("mlbFactText").innerText = mlbFacts[randomIndex];
+    });
+</script>
+
+<script>
+    const players = [
+        { name: "Aaron Judge", img: "https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/33192.png" },
+        { name: "Mookie Betts", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Dodgers_at_Nationals_%2853676957188%29_%28cropped%29.jpg/250px-Dodgers_at_Nationals_%2853676957188%29_%28cropped%29.jpg" },
+        { name: "Mike Trout", img: "https://static.wixstatic.com/media/4d23dc_f23b42d70c7c4cf8a989eabb95b4ae29~mv2.jpg/v1/fill/w_320,h_213,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4d23dc_f23b42d70c7c4cf8a989eabb95b4ae29~mv2.jpg" },
+        { name: "Shohei Ohtani", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dodgers_at_Nationals_%2853677192000%29_%28cropped%29.jpg/250px-Dodgers_at_Nationals_%2853677192000%29_%28cropped%29.jpg" },
+        { name: "Juan Soto", img: "https://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/36969.png&w=350&h=254" }
+    ];
+
+    let current = null;
+    let score = 0;
+
+    function loadPlayer() {
+        current = players[Math.floor(Math.random() * players.length)];
+        document.getElementById("playerImage").src = current.img;
+        document.getElementById("feedback").innerText = "";
+        document.getElementById("guessInput").value = "";
+    }
+
+    document.getElementById("guessBtn").addEventListener("click", () => {
+        const guess = document.getElementById("guessInput").value.trim().toLowerCase();
+
+        if (guess === current.name.toLowerCase()) {
+            score++;
+            document.getElementById("feedback").innerText = "Correct! 🔥";
+            document.getElementById("feedback").style.color = "green";
+        } else {
+            document.getElementById("feedback").innerHTML =
+                `Wrong! It was <strong>${current.name}</strong>.`;
+            document.getElementById("feedback").style.color = "red";
+        }
+
+        document.getElementById("score").innerText = "Score: " + score;
+
+        setTimeout(loadPlayer, 1500);
+    });
+
+    loadPlayer();
+</script>
+
 </body>
 </html>
